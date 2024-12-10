@@ -1,4 +1,5 @@
 export class Ciudadano {
+    [key: string]: string | Date;
     nombre_ciudadano: string;
     apellido_ciudadano: string;
     fecha_nacimiento_ciudadano: Date;
