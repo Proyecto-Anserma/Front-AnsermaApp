@@ -1,20 +1,57 @@
-<form>
-    <label for="nombre">Nombre:</label>
-    <input id="nombre" [(ngModel)]="ciudadano.nombre_ciudadano" name="nombre_ciudadano" />
+<div class="modal-header">
+    <h5 class="modal-title">Detalles del Ciudadano</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <!-- Columna 1 -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Nombre:</strong></label>
+          <p>{{ ciudadano.nombre_ciudadano }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Apellido:</strong></label>
+          <p>{{ ciudadano.apellido_ciudadano }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Correo Electrónico:</strong></label>
+          <p>{{ ciudadano.correo_electronico_ciudadano }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Teléfono:</strong></label>
+          <p>{{ ciudadano.telefono_ciudadano }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Fecha de Nacimiento:</strong></label>
+          <p>{{ ciudadano.fecha_nacimiento_ciudadano | date: 'yyyy-MM-dd' }}</p>
+        </div>
+      </div>
   
-    <label for="apellido">Apellido:</label>
-    <input id="apellido" [(ngModel)]="ciudadano.apellido_ciudadano" name="apellido_ciudadano" />
-  
-    <label for="correo">Correo Electrónico:</label>
-    <input id="correo" [(ngModel)]="ciudadano.correo_electronico_ciudadano" name="correo_electronico_ciudadano" />
-  
-    <label for="telefono">Teléfono:</label>
-    <input id="telefono" [(ngModel)]="ciudadano.telefono_ciudadano" name="telefono_ciudadano" />
-  
-    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-    <input id="fechaNacimiento" [(ngModel)]="ciudadano.fecha_nacimiento_ciudadano" name="fecha_nacimiento_ciudadano" type="date" />
-  
-    <label for="geolocalizacion">Ubicación Geográfica:</label>
-    <input id="geolocalizacion" [(ngModel)]="ciudadano.geolocalizacion" name="geolocalizacion" />
-  </form>
+      <!-- Columna 2 -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Geolocalización:</strong></label>
+          <div class="map-container" style="width: 60%; height: 130px;">
+            <div id="map" style="width: 100%; height: 100%; border-radius: 10px;"></div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Género:</strong></label>
+          <p>{{ ciudadano.genero }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Pertenencia Étnica:</strong></label>
+          <p>{{ ciudadano.pertenencia_etnica }}</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-weight-bold text-dark"><strong>Ubicación:</strong></label>
+          <p>{{ ciudadano.ubicacion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cerrar</button>
+  </div>
   

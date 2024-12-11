@@ -5,6 +5,7 @@ export class Ciudadano {
     fecha_nacimiento_ciudadano: Date;
     correo_electronico_ciudadano: string;
     telefono_ciudadano: string;
+    
     geolocalizacion: string;
   
     constructor(
